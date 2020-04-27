@@ -10,8 +10,12 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
+  "devDependencies": {
+    "concurrently": "5.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
+    "start-watch": "concurrently --kill-others \"pulp --watch build -o ./src/output\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

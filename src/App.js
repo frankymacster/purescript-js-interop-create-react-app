@@ -1,24 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+const { Succ, Pred } = require('./output/Main/index')
 
-function App() {
+function App({ state, dispatch }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={dispatch(Pred.value)}>-</button>
+      {state}
+      <button onClick={dispatch(Succ.value)}>+</button>
     </div>
   );
 }
